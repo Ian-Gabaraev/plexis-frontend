@@ -16,9 +16,9 @@ function WordOfTheDay (prop) {
                 </p>
                 <a href="#" className="btn btn-primary">Save</a>
             </div>
-            {/*<div className="card-footer text-muted">*/}
-            {/*    2 days ago*/}
-            {/*</div>*/}
+            <div className="card-footer text-muted">
+                Mastered by 63% of students
+            </div>
         </div>
     )
 }

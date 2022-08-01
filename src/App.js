@@ -1,14 +1,17 @@
 import './App.css';
 import React from "react";
 import PrimaryHeader from "./components/Navbar";
-import WordOfTheDay from "./components/Word";
-import axios from "axios";
-import {type} from "@testing-library/user-event/dist/type";
+import WordOfTheDay from "./components/WordOfDay";
+import PreviousWords from "./components/PreviousWords";
 
 const backendUrl = "http://127.0.0.1:8000/api/wod"
 
 function App() {
-    const [dta={word: "Word", definition: "def"}, setDta] = React.useState()
+
+    const [
+        dta={word: "Word", definition: "Definition"},
+        setDta
+    ] = React.useState()
 
     React.useEffect(function () {
         fetch(backendUrl)
@@ -22,7 +25,12 @@ function App() {
     return (
         <div className="App">
           <PrimaryHeader/>
-          <WordOfTheDay word={word} definition={definition}/>
+          <WordOfTheDay
+              word={word}
+              definition={definition}
+          />
+          <br/>
+          <PreviousWords/>
         </div>
     );
 }
