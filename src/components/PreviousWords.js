@@ -17,6 +17,23 @@ function trimString(string) {
 }
 
 function PreviousWordCard(props) {
+    const defaultButtonText = "Add"
+    const defaultButtonStyle = "btn-primary"
+
+    const [actionDescription, setActionDescription] = React.useState(defaultButtonText)
+    const [buttonStyle, setButtonStyle] = React.useState(defaultButtonStyle)
+
+    function handleWordSaved() {
+        // Change button style and text when clicked
+        if (actionDescription === defaultButtonText) {
+            setActionDescription("Added")
+            setButtonStyle("btn-success")
+        }
+        else {
+            setActionDescription(defaultButtonText)
+            setButtonStyle(defaultButtonStyle)
+        }
+    }
 
     return (
         <div className={"col-sm-" + props.colsize}>
@@ -24,7 +41,11 @@ function PreviousWordCard(props) {
                 <div className="card-body">
                     <h5 className="card-title">{props.word}</h5>
                     <p className="card-text">{props.definition}</p>
-                    <a href="#" className="btn btn-primary">Add to vocab</a>
+                    <button
+                        type="button"
+                        className={"btn " + buttonStyle}
+                        onClick={handleWordSaved}
+                    >{actionDescription}</button>
                 </div>
             </div>
         </div>

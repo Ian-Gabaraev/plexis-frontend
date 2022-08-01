@@ -14,7 +14,7 @@ function WordOfTheDay (prop) {
                 <p className="card-text">
                     {prop.definition}
                 </p>
-                <a href="#" className="btn btn-primary">Save</a>
+                <button type="button" className="btn btn-primary">Save</button>
             </div>
             <div className="card-footer text-muted">
                 Mastered by 63% of students

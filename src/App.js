@@ -19,15 +19,11 @@ function App() {
             .then(data => setDta(data))
     }, [])
 
-    const word = dta.word
-    const definition = dta.definition
-
     return (
         <div className="App">
           <PrimaryHeader/>
           <WordOfTheDay
-              word={word}
-              definition={definition}
+              {...dta} // Unpacks dta to: word={dta.word} definition={dta.definition}
           />
           <br/>
           <PreviousWords/>
