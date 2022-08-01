@@ -1,6 +1,8 @@
 import React from "react";
+import Paginator from "./Paginator";
 
 const colsInARow = 3;
+const maxCardsOnAPage = 6;
 const backendUrl = "http://127.0.0.1:8000/api/all"
 
 function getColCount(colSize) {
@@ -36,8 +38,8 @@ function PreviousWordCard(props) {
     }
 
     return (
-        <div className={"col-sm-" + props.colsize}>
-            <div className="card">
+        <div className={"col-sm-" + props.colsize} style={{marginBottom: "15px"}}>
+            <div className="card" style={{height: "100%"}}>
                 <div className="card-body">
                     <h5 className="card-title">{props.word}</h5>
                     <p className="card-text">{props.definition}</p>
@@ -53,10 +55,7 @@ function PreviousWordCard(props) {
 }
 
 function PreviousWords() {
-    const [
-        dta = [],
-        setDta
-    ] = React.useState()
+    const [dta, setDta] = React.useState([])
 
     React.useEffect(
         function () {
@@ -80,6 +79,10 @@ function PreviousWords() {
     return (
         <div className="row">
             {allCards}
+            <Paginator
+                count={allCards.length}
+                max={maxCardsOnAPage}
+            />
         </div>
     )
 }
