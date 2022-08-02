@@ -1,6 +1,19 @@
 import React from "react";
 
-function WordOfTheDay (prop) {
+const backendUrl = "http://127.0.0.1:8000/api/wod"
+
+function WordOfTheDay () {
+
+    const [
+        dta={word: "Word", definition: "Definition"},
+        setDta
+    ] = React.useState()
+
+    React.useEffect(function () {
+        fetch(backendUrl)
+            .then(res => res.json())
+            .then(data => setDta(data))
+    }, [])
 
     return (
         <div className="card text-center">
@@ -9,10 +22,10 @@ function WordOfTheDay (prop) {
             </div>
             <div className="card-body">
                 <h4 className="card-title">
-                    {prop.word}
+                    {dta.word}
                 </h4>
                 <p className="card-text">
-                    {prop.definition}
+                    {dta.definition}
                 </p>
                 <button type="button" className="btn btn-primary">Save</button>
             </div>
