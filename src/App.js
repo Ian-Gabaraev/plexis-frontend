@@ -5,6 +5,7 @@ import PrimaryHeader from "./components/Navbar";
 import WordOfTheDay from "./components/WordOfDay";
 import PreviousWords from "./components/PreviousWords";
 import Lobby from "./components/Lobby";
+import useWebsocket from "react-use-websocket";
 
 
 function App() {

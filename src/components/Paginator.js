@@ -23,7 +23,7 @@ function Paginator(props) {
 
     const allPagesButtons = pageButtonNumbers.map(
         pageNumber => {
-            return <PaginatorButton number={pageNumber}/>
+            return <PaginatorButton number={pageNumber} key={Math.random()}/>
         }
     )
 
