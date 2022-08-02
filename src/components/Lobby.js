@@ -1,12 +1,13 @@
 import useWebsocket from "react-use-websocket";
 import React from "react";
+import Featured from "./Featured";
 
 function InputBox() {
 
     const [backendReply, setBackendReply] = React.useState("")
 
     function updReplyBox(event) {
-        const reply = JSON.parse(event.data).message
+        const reply = JSON.parse(event.data).message.definition
         setBackendReply(reply)
     }
 
@@ -68,7 +69,10 @@ function InputBox() {
 function Lobby() {
 
     return (
+        <div>
         <InputBox/>
+        <Featured/>
+        </div>
     )
 }
 
