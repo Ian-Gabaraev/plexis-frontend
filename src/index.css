@@ -16,3 +16,8 @@ code {
   font-weight: 900;
   font-size: 3.5em;
 }
+
+.list-group-item.active {
+  background-color: rebeccapurple;
+  border-color: rebeccapurple;
+}

@@ -26,6 +26,7 @@ function App() {
                         <Route path="practice" element={<MultipleChoice/>}/>
                         <Route path="vocabulary" element={<VocabularyList/>}/>
                         <Route path="study" element={<StudyMenu/>}/>
+                        <Route path="home" element={<WordOfTheDay/>}/>
                     </Routes>
                 </BrowserRouter>
             </div>

@@ -4,7 +4,7 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg bg-white">
                 <div className="container-fluid">
 
-                    <a className="navbar-brand" href="">
+                    <a className="navbar-brand" href="home">
                         <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
                              alt=""
                              width="30"
@@ -29,7 +29,7 @@ export default function Header() {
                             <li className="nav-item">
                                 <a className="nav-link active"
                                    aria-current="page"
-                                   href="/">Home</a>
+                                   href="home">Home</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link"

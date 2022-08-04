@@ -1,6 +1,21 @@
 import React from "react";
+import ExampleSentence from "./Example";
 
 const backendUrl = "http://127.0.0.1:8000/api/wod"
+
+function BookMark() {
+    const [bookMarkIcon, setBookMarkIcon] = React.useState("bi bi-bookmark")
+
+    function switchIcon() {
+        setBookMarkIcon("bi bi-bookmark-fill")
+    }
+
+    return (
+        <a href="#" className="btn" onClick={switchIcon}>
+            <i className={bookMarkIcon} style={{fontSize: "2rem", color: "rebeccapurple"}}></i>
+        </a>
+    )
+}
 
 function WordOfTheDay () {
 
@@ -27,7 +42,12 @@ function WordOfTheDay () {
                 <p className="card-text">
                     {dta.definition}
                 </p>
-                <button type="button" className="btn btn-primary">Save</button>
+                <ExampleSentence
+                    sentence="I may as well have given them an abacus and asked them to do algebra."
+                    author="thodgson in"
+                    source="Outside Online"
+                />
+                    <BookMark/>
             </div>
             <div className="card-footer text-muted">
                 Mastered by 63% of students

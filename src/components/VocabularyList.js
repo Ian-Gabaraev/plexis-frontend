@@ -1,3 +1,5 @@
+import ExampleSentence from "./Example";
+
 function H3Badge(props) {
     return (
         <div style={{marginBottom: "20px"}}>
@@ -24,10 +26,11 @@ function VocabularyCard(props) {
                 <p>
                     {props.data}
                 </p>
-                <blockquote className="blockquote mb-0">
-                    <p>"I may as well have given them an abacus and asked them to do algebra."</p>
-                    <footer className="blockquote-footer">thodgson in <cite title="Source Title">Outside Online</cite></footer>
-                </blockquote>
+                <ExampleSentence
+                    sentence="I may as well have given them an abacus and asked them to do algebra."
+                    author="thodgson in"
+                    source="Outside Online"
+                />
             </div>
         </div>
     )
