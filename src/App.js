@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import SignInForm from "./components/SignInForm";
 import MultipleChoice from "./components/MultipleChoice";
 import VocabularyList from "./components/VocabularyList";
+import StudyMenu from "./components/StudyMenu";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                         <Route path="lobby" element={<Lobby />}/>
                         <Route path="practice" element={<MultipleChoice/>}/>
                         <Route path="vocabulary" element={<VocabularyList/>}/>
+                        <Route path="study" element={<StudyMenu/>}/>
                     </Routes>
                 </BrowserRouter>
             </div>
