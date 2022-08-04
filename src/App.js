@@ -6,32 +6,30 @@ import WordOfTheDay from "./components/WordOfDay";
 import PreviousWords from "./components/PreviousWords";
 import Lobby from "./components/Lobby";
 import useWebsocket from "react-use-websocket";
+import Header from "./components/Header";
+import SignInForm from "./components/SignInForm";
+import MultipleChoice from "./components/MultipleChoice";
+import VocabularyList from "./components/VocabularyList";
 
 
 function App() {
 
     return (
-        <BrowserRouter>
-            <Routes>
-
-                <Route path="/" element={
-                    <div className="App">
-                        <PrimaryHeader/>
-                        <WordOfTheDay/>
-                        <br/>
-                        <PreviousWords/>
-                    </div>
-                }>
-                </Route>
-
-                <Route path="/lobby" element={
-                    <Lobby/>
-                }>
-                </Route>
-
-            </Routes>
-        </BrowserRouter>
+        <div className="App">
+            <div className="container py-4">
+                <Header/>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="signin" element={<SignInForm />}/>
+                        <Route path="lobby" element={<Lobby />}/>
+                        <Route path="practice" element={<MultipleChoice/>}/>
+                        <Route path="vocabulary" element={<VocabularyList/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </div>
+        </div>
     );
 }
+
 
 export default App;
