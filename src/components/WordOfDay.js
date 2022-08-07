@@ -44,7 +44,7 @@ function WordOfTheDay () {
                 </p>
                 <ExampleSentence
                     sentence="I may as well have given them an abacus and asked them to do algebra."
-                    author="thodgson in"
+                    author="thodgson in "
                     source="Outside Online"
                 />
                     <BookMark/>
