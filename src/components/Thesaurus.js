@@ -1,6 +1,63 @@
 import ExampleSentence from "./Example";
 import React from "react";
 
+
+function AntonymButton(props) {
+
+    return (
+        <button type="button"
+                className="btn btn-danger"
+                style={{marginLeft: "5px", marginRight: "5px"}}
+        >
+            {props.word}
+        </button>
+    )
+}
+
+
+function AntonymsBlock(props) {
+
+    const buttons = props.antonyms.map(
+        word => {
+            return <AntonymButton word={word}/>
+        }
+    )
+
+    return (
+        <div style={{marginBottom: "20px"}}>
+            {buttons}
+        </div>
+    )
+}
+
+
+function SynonymButton(props) {
+
+    return (
+        <button type="button"
+                className="btn btn-success"
+                style={{marginLeft: "5px", marginRight: "5px", marginBottom: "20px"}}
+        >
+            {props.word}
+        </button>
+    )
+}
+
+function SynonymsBlock(props) {
+
+    const buttons = props.synonyms.map(
+        word => {
+            return <SynonymButton word={word}/>
+        }
+    )
+
+    return (
+        <div style={{marginBottom: "20px"}}>
+            {buttons}
+        </div>
+    )
+}
+
 function H3Badge(props) {
 
     return (
@@ -43,6 +100,8 @@ function VocabularyCard(props) {
                 </p>
                 {examples}
             </div>
+            {<SynonymsBlock synonyms={props.synonyms}/>}
+            {<AntonymsBlock antonyms={props.antonyms}/>}
         </div>
     )
 }
@@ -115,6 +174,8 @@ export default function Thesaurus() {
                             definition={entry.definition}
                             word={entry.word}
                             examples={entry.examples}
+                            synonyms={entry.synonyms}
+                            antonyms={entry.antonyms}
                         />
                 }
                 id={entry.word}
