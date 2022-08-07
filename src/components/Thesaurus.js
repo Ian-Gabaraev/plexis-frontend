@@ -93,7 +93,9 @@ export default function Thesaurus() {
 
     const allElements = dta.results.map(
         entry => {
+            const active = entry.id === dta.results[0].id
             return <ListElement
+                active={active}
                 word={entry.word}
                 id={"list-home-list-" + entry.id}
                 aria={entry.word}
@@ -104,37 +106,37 @@ export default function Thesaurus() {
 
     const allBrowsers = dta.results.map(
         entry => {
+            const active = entry.id === dta.results[0].id
             return <Browser
+                active={active}
                 key={entry.id}
                 vocabularyCard={
-                    <VocabularyCard
-                        definition={entry.definition}
-                        word={entry.word}
-                        examples={entry.examples}
-                    />
+                        <VocabularyCard
+                            definition={entry.definition}
+                            word={entry.word}
+                            examples={entry.examples}
+                        />
                 }
                 id={entry.word}
-                labeledby={"list-home-list-" + entry.id}/>
+                labeledby={"list-home-list-" + entry.id}
+            />
         }
     )
 
     return (
         <div className="row">
             <H3Badge count={dta.count}/>
-
             <div className="col-3">
                 <div className="list-group" id="list-tab" role="tablist">
                     {allElements}
                 </div>
             </div>
-
             <div className="col-9">
                 <div className="tab-content" id="nav-tabContent">
                     {allBrowsers}
                 </div>
                 <AddButton/>
             </div>
-
         </div>
     )
 }
